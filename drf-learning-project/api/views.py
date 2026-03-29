@@ -9,6 +9,8 @@ from rest_framework import mixins, generics
 from students.models import Student
 from .serializers import StudentSerializer, EmployeeSerializer
 from employees.models import Employee
+from blogs.models import Blog, Comment
+from blogs.serializers import BlogSerializer, CommentSerializer
 
 
 # Create your views here.
@@ -165,3 +167,22 @@ from rest_framework import viewsets
 class EmployeeViewSet(viewsets.ModelViewSet):
   queryset = Employee.objects.all()
   serializer_class = EmployeeSerializer
+
+
+class BlogsView(generics.ListCreateAPIView):
+  queryset = Blog.objects.all()
+  serializer_class = BlogSerializer
+
+class CommentsView(generics.ListCreateAPIView):
+  queryset = Comment.objects.all()
+  serializer_class = CommentSerializer
+
+class BlogDetailView(generics.RetrieveUpdateDestroyAPIView):
+  queryset = Blog.objects.all()
+  serializer_class = BlogSerializer
+  lookup_field = "pk"
+
+class CommentDetailView(generics.RetrieveUpdateDestroyAPIView):
+  queryset = Comment.objects.all()
+  serializer_class = CommentSerializer
+  lookup_field = "pk"
