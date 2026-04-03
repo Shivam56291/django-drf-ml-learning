@@ -22,7 +22,7 @@ const Main = () => {
           for smarter investment decisions.
         </p>
 
-        <Button href="#">Get Started</Button>
+        <Button to="/register">Get Started</Button>
       </div>
     </div>
   );

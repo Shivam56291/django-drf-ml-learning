@@ -147,3 +147,21 @@ body {
     opacity: 0.8;
   }
 }
+
+/* 
+---------------------------------------------------------- */
+/* placeholder configuration */
+
+.form-control::placeholder {
+  color: #ced4da;
+  opacity: 1;
+}
+
+/* For better browser support */
+.form-control::-ms-input-placeholder {
+  color: #ced4da;
+}
+
+.form-control::-webkit-input-placeholder {
+  color: #ced4da;
+}
