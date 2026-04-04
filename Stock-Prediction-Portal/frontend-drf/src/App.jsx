@@ -8,24 +8,27 @@ import Footer from "./components/Footer";
 import Main from "./components/Main";
 import Register from "./components/Register";
 import Login from "./components/Login";
+import AuthProvider from "./AuthProvider";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <div className="d-flex flex-column min-vh-100">
-        <Header />
+    <AuthProvider>
+      <BrowserRouter>
+        <div className="d-flex flex-column min-vh-100">
+          <Header />
 
-        <div className="flex-grow-1 d-flex align-items-center justify-content-center">
-          <Routes>
-            <Route path="/" element={<Main />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-          </Routes>
+          <div className="flex-grow-1 d-flex align-items-center justify-content-center">
+            <Routes>
+              <Route path="/" element={<Main />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />
+            </Routes>
+          </div>
+
+          <Footer />
         </div>
-
-        <Footer />
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </AuthProvider>
   );
 };
 

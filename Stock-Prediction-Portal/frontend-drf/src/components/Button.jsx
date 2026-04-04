@@ -10,10 +10,16 @@ const Button = ({
   ...props
 }) => {
   const base = "btn px-4 py-2";
-  const styles =
-    variant === "outline" ? "btn-outline-green" : "btn-green";
 
-  // If "to" is provided → use Link
+  const stylesMap = {
+    filled: "btn-green",
+    outline: "btn-outline-green",
+    ghost: "btn-ghost",
+    danger: "btn-danger-custom",
+  };
+
+  const styles = stylesMap[variant] || "btn-green";
+
   if (to) {
     return (
       <Link to={to} className={`${base} ${styles} ${className}`} {...props}>
@@ -22,7 +28,6 @@ const Button = ({
     );
   }
 
-  // Otherwise → use button (for forms)
   return (
     <button
       type={type}

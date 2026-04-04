@@ -165,3 +165,29 @@ body {
 .form-control::-webkit-input-placeholder {
   color: #ced4da;
 }
+
+/* ---------------------------------------------------------- */
+/* Ghost button (for Login - subtle) */
+.btn-ghost {
+  color: #adb5bd;
+  background: transparent;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-ghost:hover {
+  color: #00e676;
+}
+
+/* Danger button (for Logout) */
+.btn-danger-custom {
+  background-color: transparent;
+  color: #ff5252;
+  border: 1px solid #ff5252;
+  transition: all 0.3s ease;
+}
+
+.btn-danger-custom:hover {
+  background-color: #ff5252;
+  color: #fff;
+}
