@@ -6,9 +6,12 @@ import "./assets/css/style.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Main from "./components/Main";
+import PublicRoute from "./PublicRoute";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import AuthProvider from "./AuthProvider";
+import PrivateRoute from "./PrivateRoute";
+import Dashboard from "./components/dashboard/Dashboard";
 
 const App = () => {
   return (
@@ -20,8 +23,30 @@ const App = () => {
           <div className="flex-grow-1 d-flex align-items-center justify-content-center">
             <Routes>
               <Route path="/" element={<Main />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/login" element={<Login />} />
+              <Route
+                path="/register"
+                element={
+                  <PublicRoute>
+                    <Register />
+                  </PublicRoute>
+                }
+              />
+              <Route
+                path="/login"
+                element={
+                  <PublicRoute>
+                    <Login />
+                  </PublicRoute>
+                }
+              />
+              <Route
+                path="/dashboard"
+                element={
+                  <PrivateRoute>
+                    <Dashboard />
+                  </PrivateRoute>
+                }
+              />
             </Routes>
           </div>
 

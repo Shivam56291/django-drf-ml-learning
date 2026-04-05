@@ -25,9 +25,15 @@ const Header = () => {
 
       <div className="pt-4 d-flex align-items-center gap-2">
         {isLoggedIn ? (
-          <Button variant="danger" onClick={handleLogout}>
-            Logout
-          </Button>
+          <>
+            <Button variant="ghost" to="/dashboard">
+              Dashboard
+            </Button>
+
+            <Button variant="danger" onClick={handleLogout}>
+              Logout
+            </Button>
+          </>
         ) : (
           <>
             <Button variant="ghost" to="/login">

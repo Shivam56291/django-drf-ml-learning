@@ -44,7 +44,7 @@ function Login() {
       setPassword("");
       setIsLoggedIn(true);
       setTimeout(() => {
-        navigate("/");
+        navigate("/dashboard");
       }, 1500);
 
     } catch (err) {
@@ -83,7 +83,7 @@ function Login() {
 
           {success && (
             <div className="alert alert-success text-center">
-              Redirecting to homepage...
+              Redirecting to Dashboard...
             </div>
           )}
 
